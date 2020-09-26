@@ -3,7 +3,6 @@ import "./App.css";
 import SideBar from "./components/sidebar/SideBar";
 import Chat from "./components/chat/Chat";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
-import { useState } from "react";
 import Login from "./components/login/Login";
 import { useStateValue } from "./StateProvider";
 
@@ -23,7 +22,7 @@ function App() {
                 <Chat />
               </Route>
               <Route path="/">
-                <h1>Hello</h1>
+                <Chat />
               </Route>
               <Chat />
             </Switch>
