@@ -41,11 +41,15 @@ const Chat = () => {
 
   const sendMessage = (e) => {
     e.preventDefault();
-    db.collection("rooms").doc(roomId).collection("messages").add({
-      message: input,
-      name: user.displayName,
-      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-    });
+    db.collection("rooms")
+      .doc(roomId)
+      .collection("messages")
+      .add({
+        message: input,
+        name: user.displayName,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        id: Math.floor(Math.random() * 5000),
+      });
     setInput("");
   };
 
@@ -97,6 +101,7 @@ const Chat = () => {
             value={input}
             onChange={(evt) => setInput(evt.target.value)}
             type="text"
+            className="messageInput"
             placeholder="Type a message"
           />
           <button onClick={sendMessage} type="submit">
