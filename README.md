@@ -1,6 +1,6 @@
 
 
-## NETFLIX clone using ReactJS.
+## Whatsapp clone using ReactJS.
 
 UI was made using css and material ui, you can create auth using google account and create rooms & chat. 
 
